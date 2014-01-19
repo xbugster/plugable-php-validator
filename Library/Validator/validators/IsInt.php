@@ -7,7 +7,8 @@ namespace validators;
 
 class IsInt extends AbstractValidator
 {
-    public function isValid() {
-        // todo in each isValid method, the method should act as required by its concept.
+    public function isValid( $value )
+    {
+        return is_int( $value );
     }
 } 

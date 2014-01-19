@@ -21,5 +21,5 @@ abstract class AbstractValidator implements \SplObserver
         $subject->setReturnValue( $this->_isValid(  ) );
     }
 
-    abstract public function isValid();
+    abstract public function isValid( $value );
 } 

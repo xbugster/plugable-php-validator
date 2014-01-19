@@ -2,7 +2,8 @@
 /**
  * Validator
  * @desc Subject responsible for attaching observers, running observers
- *       and returning the boolean value
+ *       on a set of value using predefined config and returning the boolean value
+ *       based on a validation results.
  * @author Valentin Ruskevych @ https://github.com/xbugster
  * @since v0.1
  */
