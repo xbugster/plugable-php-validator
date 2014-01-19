@@ -7,7 +7,7 @@ namespace validators;
 
 class IsInt extends AbstractValidator
 {
-    protected function _isValid() {
+    public function isValid() {
         // todo in each isValid method, the method should act as required by its concept.
     }
 } 

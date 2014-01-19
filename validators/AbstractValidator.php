@@ -1,7 +1,9 @@
 <?php
 /**
- * Implementation of Template Pattern.
- * The flow is set once, within abstraction layer.
+ * @desc    Implementation of Template Pattern.
+ *          The flow is set once, within abstraction layer.
+ * @author  Valentin Ruskevych
+ * @since   v0.1
  */
 
 namespace validators;
@@ -15,8 +17,9 @@ abstract class AbstractValidator implements \SplObserver
      */
     public function update( \SplSubject $subject )
     {
-        $subject->setReturnValue( $this->_isValid() );
+        // todo Think about simplified access (ex. $isInt->isValid(10)):
+        $subject->setReturnValue( $this->_isValid(  ) );
     }
 
-    abstract protected function _isValid();
+    abstract public function isValid();
 } 
