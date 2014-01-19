@@ -81,10 +81,21 @@ class Validator implements \SplSubject
      * @desc    getData - Public interface for data.
      * @author  Mr.X
      *
+     * @param   string  $key representing the key to get from data
+     * @return  string/array
      */
-    public function getData()
+    public function getData($key = '*')
     {
-        return $this->_data;
+        if ( isset( $this->_data[$key] )
+        ) {
+            return $this->_data[$key];
+        }
+
+        if ( $key === '*'
+        ) {
+            return $this->_data;
+        }
+        return false;
     }
 
     /**
