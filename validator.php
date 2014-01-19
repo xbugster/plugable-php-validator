@@ -69,4 +69,22 @@ class Validator implements \SplSubject
     {
         // @TODO run the validate process and return $this->_valueToReturn
     }
+
+    /**
+     * @desc ValueToReturn Setter.
+     * @param boolean $value
+     */
+    public function setReturnValue($value)
+    {
+        $this->_returnValue = $value;
+    }
+
+    /**
+     * @desc Getter for ValueToReturn, the resulting value of validation process
+     * @return bool
+     */
+    public function getReturnValue()
+    {
+        return $this->_returnValue;
+    }
 }
