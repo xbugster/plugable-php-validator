@@ -1,0 +1,15 @@
+{
+    "name": "xbug/plugable-php-validator",
+    "description": "A plugable PHP Validator. (xbugster@git)",
+    "license": "GNU",
+    "authors": [
+        {
+            "name": "Valentin Ruskevych",
+            "email": "xbugster@github.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+
+    }
+}
