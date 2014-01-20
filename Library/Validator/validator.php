@@ -42,9 +42,9 @@ class Validator implements \SplSubject
 
     /**
      * @desc    attach - Observer Attachment method, as dictated by SplSubject.
-     * @author  Mr.X
+     * @author  Valentin Ruskevych
      *
-     * @param   SplObserver     $observer
+     * @param   \SplObserver $observer
      */
     public function attach( \SplObserver $observer )
     {
@@ -53,9 +53,9 @@ class Validator implements \SplSubject
 
     /**
      * @desc    detach - Observer detachment method, as dictated by SplSubject.
-     * @author  Mr.X
+     * @author  Valentin Ruskevych
      *
-     * @param   SplObserver     $observer
+     * @param   \SplObserver $observer
      */
     public function detach( \SplObserver $observer )
     {
@@ -65,6 +65,7 @@ class Validator implements \SplSubject
     /**
      * @desc    Notify - implementation of SplSubject interface.
      *          Responsible for update()ing the observers.
+     * @author  Valentin Ruskevych
      */
     public function notify()
     {
@@ -74,6 +75,7 @@ class Validator implements \SplSubject
     /**
      * @desc    Data Setter. Sets the data to validate
      * @param   array   $data
+     * @author  Valentin Ruskevych
      */
     public function setData( array $data = array() )
     {
@@ -82,7 +84,7 @@ class Validator implements \SplSubject
 
     /**
      * @desc    getData - Public interface for data.
-     * @author  Mr.X
+     * @author  Valentin Ruskevych
      *
      * @param   string  $key representing the key to get from data
      * @return  string/array
@@ -103,8 +105,8 @@ class Validator implements \SplSubject
 
     /**
      * @desc    isValid - The chain method.
-     * @author  Mr.X
-     *
+     * @author  Valentin Ruskevych
+     * @return  boolean
      */
     public function isValid()
     {
@@ -113,6 +115,7 @@ class Validator implements \SplSubject
 
     /**
      * @desc    ValueToReturn Setter.
+     * @author  Valentin Ruskevych
      * @param   bool    $value
      */
     public function setReturnValue($value)
@@ -122,6 +125,7 @@ class Validator implements \SplSubject
 
     /**
      * @desc    Getter for ValueToReturn, the resulting value of validation process
+     * @author  Valentin Ruskevych
      * @return  bool
      */
     public function getReturnValue()

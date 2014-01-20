@@ -12,8 +12,9 @@ namespace Library\Validator\Validators;
 abstract class AbstractValidator implements \SplObserver
 {
     /**
-     * @desc SplSubject Interface implementation, responsible for validating and setting value to Subject.
-     * @param \SplSubject $subject
+     * @desc    SplSubject Interface implementation, responsible for validating and setting value to Subject.
+     * @author  Valentin Ruskevych
+     * @param   \SplSubject $subject
      */
     public function update( \SplSubject $subject )
     {
@@ -21,5 +22,11 @@ abstract class AbstractValidator implements \SplObserver
         $subject->setReturnValue( $this->_isValid(  ) );
     }
 
+    /**
+     * @desc    isValid() - The function to be implemented by observer, to run the validate process
+     *                      regarding each class' personal validation way.
+     * @param   mixed   $value  A value to validate.
+     * @return  boolean
+     */
     abstract public function isValid( $value );
 } 
