@@ -19,7 +19,7 @@ abstract class AbstractValidator implements \SplObserver
     public function update( \SplSubject $subject )
     {
         // todo Think about simplified access (ex. $isInt->isValid(10)):
-        $subject->setReturnValue( $this->_isValid(  ) );
+        $subject->setReturnValue( self::isValid(  ) );
     }
 
     /**
@@ -28,5 +28,5 @@ abstract class AbstractValidator implements \SplObserver
      * @param   mixed   $value  A value to validate.
      * @return  boolean
      */
-    abstract public function isValid( $value );
+    abstract static public function isValid( $value );
 } 

@@ -16,7 +16,7 @@ class IsUnsignedInt extends IsInt
      * @param   int     $value  a value to validate
      * @return  bool
      */
-    public function isValid( $value )
+    static public function isValid( $value )
     {
         return ( parent::isValid( $value ) && $value >= 0 );
     }

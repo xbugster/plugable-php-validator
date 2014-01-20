@@ -16,7 +16,7 @@ class IsInt extends AbstractValidator
      * @param   int     $value  a value to validate
      * @return  bool
      */
-    public function isValid( $value )
+    static public function isValid( $value )
     {
         return is_int( $value );
     }

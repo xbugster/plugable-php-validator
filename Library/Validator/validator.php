@@ -14,9 +14,9 @@ class Validator implements \SplSubject
 {
     /**
      * @desc    Data to validate container
-     * @var     array/null
+     * @var     array
      */
-    private $_data = null;
+    private $_data = array();
 
     /**
      * @desc    Container of the value to return, false by default
@@ -25,19 +25,29 @@ class Validator implements \SplSubject
     private $_returnValue = false;
 
     /**
-     * @desc    null while unitialized, SplObjectStorage in other cases.
+     * @desc Validation Configuration container
+     * @var array
+     */
+    private $_config = array();
+
+    /**
+     * @desc    null while uninitialized, SplObjectStorage in other cases.
      * @var     object/null     \SplObjectStorage
      */
     private $_storage = null;
 
     /**
      * @desc    Constructor to set up a storage, if is set data to validate - set the data.
-     * @param   array   $dataToValidate
+     * @author  Valentin Ruskevych
+     * @param   array   $validationConfig
      */
-    public function __construct( array $dataToValidate = array() )
+    public function __construct( array $validationConfig = array() )
     {
         $this->_storage = new SplObjectStorage();
-        // @TODO check if set dataToValidate, so set it
+        if ( 0 < sizeof( $validationConfig )
+        ) {
+            $this->setConfig( $validationConfig );
+        }
     }
 
     /**
@@ -63,6 +73,26 @@ class Validator implements \SplSubject
     }
 
     /**
+     * @desc    Set Config - Public setter, to allow setting validation config after instantiation.
+     *          forcing to pass array, to partially force validating single item to validator model, rather
+     *          than instantiating full cycle mechanism.
+     * @author  Valentin Ruskevych
+     * @param   array    $validationConfig
+     */
+    public function setConfig( array $validationConfig = array() ) {
+        $this->_config = $validationConfig;
+    }
+
+    /**
+     * @desc    Config Getter - debugging and unit testing
+     * @author  Valentin Ruskevych
+     * @return  array
+     */
+    public function getConfig( ) {
+        return $this->_config;
+    }
+
+    /**
      * @desc    Notify - implementation of SplSubject interface.
      *          Responsible for update()ing the observers.
      * @author  Valentin Ruskevych
@@ -75,11 +105,18 @@ class Validator implements \SplSubject
     /**
      * @desc    Data Setter. Sets the data to validate
      * @param   array   $data
+     * @param   string  $key
      * @author  Valentin Ruskevych
      */
-    public function setData( array $data = array() )
+    public function setData( array $data = array(), $key = null )
     {
-        $this->_data = $data;
+        if( is_null( $key )
+        ) {
+            $this->_data = $data;
+            return;
+        }
+        $this->_data[ $key ] = $data;
+        return;
     }
 
     /**
@@ -89,11 +126,11 @@ class Validator implements \SplSubject
      * @param   string  $key representing the key to get from data
      * @return  string/array
      */
-    public function getData($key = '*')
+    public function getData( $key = '*' )
     {
-        if ( isset( $this->_data[$key] )
+        if ( isset( $this->_data[ $key ] )
         ) {
-            return $this->_data[$key];
+            return $this->_data[ $key ];
         }
 
         if ( $key === '*'
@@ -111,6 +148,11 @@ class Validator implements \SplSubject
     public function isValid()
     {
         // @TODO run the validate process and return $this->_valueToReturn
+        // 1. first, check that config is set
+        // 2. think what is better: get precise data, or, aggregate full data (get, post, cookie, session, server)
+        // 3. verify that data exists
+        // 4. run the notify
+        // 5. return $this->getReturnValue();
     }
 
     /**
@@ -118,7 +160,7 @@ class Validator implements \SplSubject
      * @author  Valentin Ruskevych
      * @param   bool    $value
      */
-    public function setReturnValue($value)
+    public function setReturnValue( $value )
     {
         $this->_returnValue = $value;
     }
