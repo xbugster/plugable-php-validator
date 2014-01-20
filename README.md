@@ -19,3 +19,15 @@ Composer
 ### Status
 
 The project currently is at its beginning state.
+
+### TODO
+
+* Adopt code for Composer
+* Finish The Validation Process
+* Cover Validator with UnitTest
+* Code the validators
+* Cover Validators Modules with UnitTests
+* Rewrite the readme to add various examples
+* Release
+* Add the most of validators
+* Support the project and keep an eye on requests.
