@@ -3,7 +3,7 @@
  * @desc Is Unsigned Integer Validator implements SplObserver Interface.
  */
 
-namespace validators;
+namespace Library\Validator\Validators;
 
 class IsUnsignedInt extends IsInt
 {

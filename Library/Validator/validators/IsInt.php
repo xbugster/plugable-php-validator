@@ -3,7 +3,7 @@
  * @desc Is Integer Validator implements SplObserver Interface.
  */
 
-namespace validators;
+namespace Library\Validator\Validators;
 
 class IsInt extends AbstractValidator
 {

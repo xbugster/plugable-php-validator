@@ -6,7 +6,7 @@
  * @since   v0.1
  */
 
-namespace validators;
+namespace Library\Validator\Validators;
 
 
 abstract class AbstractValidator implements \SplObserver

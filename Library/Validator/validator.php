@@ -8,6 +8,8 @@
  * @since v0.1
  */
 
+namespace Library\Validator;
+
 class Validator implements \SplSubject
 {
     /**
