@@ -43,7 +43,7 @@ class Validator implements \SplSubject
      */
     public function __construct( array $validationConfig = array() )
     {
-        $this->_storage = new SplObjectStorage();
+        $this->_storage = new \SplObjectStorage();
         if ( 0 < sizeof( $validationConfig )
         ) {
             $this->setConfig( $validationConfig );
