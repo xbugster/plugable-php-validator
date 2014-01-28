@@ -11,3 +11,8 @@ $autoloader->register();
 
 $validator = new Library\Validator\Validator();
 var_dump($validator);
+
+// validator instantiation
+// validator -> set config
+// validator -> set data
+// validator -> run process
