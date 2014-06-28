@@ -1,8 +1,8 @@
-# Plugable PHP Validator
+# Pluggable PHP Validator
 
 ### About
 
-Plugable PHP Validator is a validator mechanism based on Observer Pattern implementing various design patterns to decouple the code at its maximum.
+Pluggable PHP Validator is a validator mechanism based on Observer Pattern implementing various design patterns to decouple the code at its maximum.
 Implementing Template Design Pattern to allow the stand-alone use of each validator model.
 
 #### Common principles:
