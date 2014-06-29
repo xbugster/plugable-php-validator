@@ -15,13 +15,18 @@ $autoloader->register();
     /**
      * Validation Subject Initialization
      */
-$validator = new Library\Validator\Validator();
+$validator = new Library\Validator\ValidatorSubject();
 var_dump($validator);
 
-// rework -> the "field" creation needs to be made using Builder
-// The Builder needs to be accessed via Proxy
-// The Proxy also encapsulates the Validator
-// The Builder then, on "createField", creates a new field object
+
+
+// new workflow as of 29.06.2014
+// Validator is a PROXY to access others methods and encapsulate objects(commander)
+// Validator create FieldSet object (storage for field objects).
+// createField using proxy calls FieldSet createField, fields set creates field and stores within and returns field.
+// this will be the configuration support by calling methods.
+// error object needs to be used within validatorSubject. implements arrayAccess and countable !
+
 // The rest of methods sets the properties on a building object
 // Then get result from builder, that is the field object.
 // Attach object to Validator through Proxy.
