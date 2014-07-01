@@ -102,7 +102,7 @@ class Errors implements \ArrayAccess, \Countable, \Iterator {
      */
     public function getMessagesAsText( )
     {
-        return empty( $this->_container ) ? false : implode( "\n", $this->_container );
+        return implode( "\n", $this->_container );
     }
 
     /**
@@ -113,7 +113,7 @@ class Errors implements \ArrayAccess, \Countable, \Iterator {
      */
     public function getMessagesAsJSON( )
     {
-        return empty( $this->_container ) ? false : json_encode( $this->_container );
+        return json_encode( $this->_container );
     }
 
     /**
@@ -124,6 +124,6 @@ class Errors implements \ArrayAccess, \Countable, \Iterator {
      */
     public function getMessagesAsArray( )
     {
-        return empty( $this->_container ) ? false : $this->_container;
+        return $this->_container;
     }
 }
