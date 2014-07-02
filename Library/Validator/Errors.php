@@ -67,7 +67,6 @@ class Errors implements \ArrayAccess, \Countable, \Iterator {
     /**
      * @desc   rewind - Part of Iterator Interface methods.
      * @author Valentin Ruskevych
-     *
      */
     public function rewind( )
     {
